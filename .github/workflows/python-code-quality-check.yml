@@ -20,7 +20,11 @@ jobs:
           pip install pylint
       - name: Run Pylint (Unit Tests)
         run: |
-          pylint .
+          if [ -f "__init__.py" ]; then
+            pylint .
+          else
+            pylint --ignore=__init__.py .
+          fi
 
   mypy:
     runs-on: ubuntu-latest

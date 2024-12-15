@@ -20,7 +20,15 @@ jobs:
           pip install pylint
       - name: Run Pylint (Unit Tests)
         run: |
-          pylint *.py
+          score=$(pylint *.py | tail -2 | head -1 | grep -o '[0-9]*\.[0-9]*' || echo "0.0")
+          echo "Pylint score: $score"
+          if (( $(echo "$score >= 9.0" | bc -l) )); then
+            echo "✅ Pylint score is above or equal to 9.0"
+            exit 0
+          else
+            echo "❌ Pylint score is below 9.0"
+            exit 1
+          fi
 
   mypy:
     runs-on: ubuntu-latest

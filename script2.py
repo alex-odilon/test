@@ -6,7 +6,6 @@ e multiplicar dois números. A função count_lines tenta abrir um arquivo e
 contar o número de linhas. Se houver erro, retorna None.
 """
 
-
 def count_lines(file_path: str) -> Optional[int]:
     """
     Conta o número de linhas em um arquivo especificado por file_path.
@@ -28,7 +27,6 @@ def count_lines(file_path: str) -> Optional[int]:
         print(f"Erro inesperado: {e}")
         return None
 
-
 def multiply_numbers(a: int, b: int) -> int:
     """
     Multiplica dois números.
@@ -38,7 +36,6 @@ def multiply_numbers(a: int, b: int) -> int:
     :return: Resultado da multiplicação.
     """
     return a * b
-
 
 FILE_PATH = "example.txt"  # Alterado para UPPER_CASE como constante
 lines_count = count_lines(FILE_PATH)

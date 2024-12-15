@@ -4,6 +4,7 @@ A função 'process_file' lê um arquivo e retorna seu tamanho, enquanto 'divide
 realiza uma divisão entre dois números e trata a divisão por zero.
 """
 
+
 def process_file(file_path):
     """
     Lê o conteúdo de um arquivo e imprime seu conteúdo.

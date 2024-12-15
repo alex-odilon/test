@@ -7,8 +7,10 @@ def count_lines(file_path):
         print(f"Erro ao abrir o arquivo: {e}")
         return None
 
+
 def multiply_numbers(a, b):
     return a * b
+
 
 file_path = "example.txt"
 lines_count = count_lines(file_path)

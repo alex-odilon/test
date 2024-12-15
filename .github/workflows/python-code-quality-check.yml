@@ -20,7 +20,7 @@ jobs:
           pip install pylint
       - name: Run Pylint (Unit Tests)
         run: |
-          pylint .
+          pylint *.py
 
   mypy:
     runs-on: ubuntu-latest

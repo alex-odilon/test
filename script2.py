@@ -1,7 +1,7 @@
 def count_lines(file_path):
 
     try:
-        with open(file_path, 'r') as file:
+        with open(file_path, "r") as file:
             lines = file.readlines()
         return len(lines)
     except Exception as e:

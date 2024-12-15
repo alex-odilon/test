@@ -1,5 +1,5 @@
 def process_file(file_path):
-    with open(file_path, "r") as file:
+    with open(file_path, "r", encoding="utf-8") as file:
         data = file.read()
         print(data)
     return len(data)
@@ -12,4 +12,4 @@ def divide_numbers(a, b):
 
 
 result = divide_numbers(10, 0)
-print("Result is awdaw:", result)
+print("Result is:", result)

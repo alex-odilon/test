@@ -1,5 +1,3 @@
-import os
-
 def count_lines(file_path):
     try:
         with open(file_path, 'r') as file:

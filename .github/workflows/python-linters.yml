@@ -1,0 +1,42 @@
+name: Python Linters Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+
+    - name: Install dependencies
+      run: |
+        pip install flake8 black mypy bandit
+
+    - name: Run Flake8 (Code Style)
+      run: |
+        flake8 script.py
+
+    - name: Run Black (Code Formatting Check)
+      run: |
+        black --check script.py
+
+    - name: Run Mypy (Type Checking)
+      run: |
+        mypy script.py
+
+    - name: Run Bandit (Security Analysis)
+      run: |
+        bandit -r .

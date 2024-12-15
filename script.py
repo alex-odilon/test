@@ -1,5 +1,5 @@
 def process_file(file_path):
-    with open(file_path, 'r') as file:
+    with open(file_path, "r") as file:
         data = file.read()
         print(data)
     return len(data)

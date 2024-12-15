@@ -1,20 +1,39 @@
-def count_lines(file_path):
+"""
+Este módulo contém funções para contar o número de linhas em um arquivo
+e multiplicar dois números.
+"""
+
+def count_lines(file_path: str) -> int:
+    """
+    Conta o número de linhas em um arquivo especificado por file_path.
+
+    :param file_path: Caminho do arquivo a ser lido.
+    :return: Número de linhas no arquivo ou None se ocorrer um erro.
+    """
     try:
-        with open(file_path, "r") as file:
+        with open(file_path, "r", encoding="utf-8") as file:
             lines = file.readlines()
         return len(lines)
-    except Exception as e:
+    except FileNotFoundError as e:
         print(f"Erro ao abrir o arquivo: {e}")
         return None
+    except Exception as e:
+        print(f"Erro inesperado: {e}")
+        return None
 
+def multiply_numbers(a: int, b: int) -> int:
+    """
+    Multiplica dois números.
 
-def multiply_numbers(a, b):
+    :param a: Primeiro número.
+    :param b: Segundo número.
+    :return: Resultado da multiplicação.
+    """
     return a * b
 
+FILE_PATH = "example.txt"  # Alterado para UPPER_CASE como constante
+lines_count = count_lines(FILE_PATH)
+print(f"O número de linhas em {FILE_PATH} é {lines_count}")
 
-file_path = "example.txt"
-lines_count = count_lines(file_path)
-print(f"O número de linhas em {file_path} é {lines_count}")
-
-result = multiply_numbers(3, 7)
-print(f"O resultado da multiplicação é: {result}")
+RESULT = multiply_numbers(3, 7)  # Alterado para UPPER_CASE como constante
+print(f"O resultado da multiplicação é: {RESULT}")

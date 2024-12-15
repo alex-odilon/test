@@ -1,4 +1,4 @@
-name: Python Linters Pipeline
+name: Python Code Quality Check
 
 on:
   pull_request:

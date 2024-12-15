@@ -37,9 +37,9 @@ def multiply_numbers(a: int, b: int) -> int:
     """
     return a * b
 
-FILE_PATH = "example.txt"  # Alterado para UPPER_CASE como constante
+FILE_PATH = "example.txt"  # Constante em maiúsculas
 lines_count = count_lines(FILE_PATH)
 print(f"O número de linhas em {FILE_PATH} é {lines_count}")
 
-RESULT = multiply_numbers(3, 7)  # Alterado para UPPER_CASE como constante
+RESULT = multiply_numbers(3, 7)  # Constante em maiúsculas
 print(f"O resultado da multiplicação é: {RESULT}")

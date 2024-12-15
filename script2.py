@@ -1,10 +1,11 @@
-from typing import Optional
-
 """
 Este módulo contém funções para contar o número de linhas em um arquivo
 e multiplicar dois números. A função count_lines tenta abrir um arquivo e
 contar o número de linhas. Se houver erro, retorna None.
 """
+
+from typing import Optional
+
 
 def count_lines(file_path: str) -> Optional[int]:
     """
@@ -23,9 +24,10 @@ def count_lines(file_path: str) -> Optional[int]:
     except OSError as e:
         print(f"Erro ao acessar o arquivo: {e}")
         return None
-    except Exception as e:
-        print(f"Erro inesperado: {e}")
+    except UnicodeDecodeError as e:
+        print(f"Erro ao decodificar o arquivo: {e}")
         return None
+
 
 def multiply_numbers(a: int, b: int) -> int:
     """
@@ -36,6 +38,7 @@ def multiply_numbers(a: int, b: int) -> int:
     :return: Resultado da multiplicação.
     """
     return a * b
+
 
 FILE_PATH = "example.txt"  # Constante em maiúsculas
 lines_count = count_lines(FILE_PATH)

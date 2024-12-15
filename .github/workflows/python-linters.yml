@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  lint:
+  code-quality-check:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,15 +24,15 @@ jobs:
 
     - name: Run Flake8 (Code Style)
       run: |
-        flake8 script.py
+        flake8 .
 
     - name: Run Black (Code Formatting Check)
       run: |
-        black --check script.py
+        black --check .
 
     - name: Run Mypy (Type Checking)
       run: |
-        mypy script.py
+        mypy .
 
     - name: Run Bandit (Security Analysis)
       run: |

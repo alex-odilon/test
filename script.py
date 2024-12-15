@@ -12,4 +12,4 @@ def divide_numbers(a, b):
 
 
 result = divide_numbers(10, 0)
-print("Result isss:", result)
+print("Result is awdaw:", result)
